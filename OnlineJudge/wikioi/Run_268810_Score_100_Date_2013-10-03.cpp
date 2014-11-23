@@ -1,2 +1,0 @@
-#include <iostream>
-using namespace std;const int N=120,F=10000000;int w[N],n,f[N][N],s[N],i,j,k;int main(){cin >> n;for(i=1;i<=n;i++)for(j=1;j<=n;j++)f[i][j]=F;for(i=1;i<=n;i++){cin>>w[i];f[i][i]=0;s[i]+=s[i-1]+w[i];}for(j=1;j<=n;j++)for(i=j;i>0;i--)for(k=i;k<j;k++)f[i][j]=min(f[i][j],f[i][k]+f[k+1][j]+s[j]-s[i-1]);cout<<f[1][n];return 0;}
